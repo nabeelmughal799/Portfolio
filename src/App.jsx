@@ -16,25 +16,14 @@ export default function App() {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [highlightedProjectId, setHighlightedProjectId] = useState(null);
 
-  // One-time intro splash screen state (checked once per session & respects prefers-reduced-motion)
+  // Intro splash screen state (plays on every page load/reload; respects prefers-reduced-motion)
   const [showSplash, setShowSplash] = useState(() => {
     if (typeof window === "undefined") return false;
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return false;
-    try {
-      const alreadyPlayed = sessionStorage.getItem("nabeel_intro_played");
-      return !alreadyPlayed;
-    } catch {
-      return false;
-    }
+    return !prefersReduced;
   });
 
   const handleSplashComplete = () => {
-    try {
-      sessionStorage.setItem("nabeel_intro_played", "true");
-    } catch {
-      // Ignore storage errors in private browsing/sandboxed contexts
-    }
     setShowSplash(false);
   };
 
