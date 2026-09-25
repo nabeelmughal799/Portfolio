@@ -90,7 +90,7 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
           className="absolute inset-0 z-0 pointer-events-none touch-none opacity-[0.42]"
         >
           <LiquidEther
-            colors={["#1A1A1A", "#8E6D16", "#D8BEA6"]}
+            colors={["#121212", "#533E10", "#2A2A2A"]}
             mouseForce={8}
             autoDemo={true}
             autoSpeed={0.3}
