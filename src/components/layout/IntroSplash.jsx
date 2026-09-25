@@ -47,14 +47,14 @@ export default function IntroSplash({ onComplete }) {
       initial={{ opacity: 1 }}
       animate={{ opacity: phase === "outro" ? 0 : 1 }}
       transition={{ duration: 0.95, ease: [0.65, 0, 0.35, 1] }}
-      className="fixed inset-0 z-50 overflow-hidden bg-[#121212] select-none pointer-events-auto"
+      className="fixed inset-0 z-50 overflow-hidden bg-[#051F20] select-none pointer-events-auto"
       style={{ touchAction: "none" }}
     >
       {/* Background blueprint grid overlay */}
       <div className="absolute inset-0 bg-os-grid opacity-20 pointer-events-none" />
 
-      {/* ── 1 & 2: Liquid Curtains & Geometric Gold Parting Layers ──────── */}
-      {/* Left Gold Liquid Curtain Layer */}
+      {/* ── 1 & 2: Liquid Curtains & Geometric Parting Layers ──────── */}
+      {/* Left Liquid Curtain Layer */}
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: "-105%" }}
@@ -65,10 +65,10 @@ export default function IntroSplash({ onComplete }) {
         }}
         className="absolute inset-y-0 left-0 w-[55%] z-20 pointer-events-none overflow-hidden"
       >
-        <div className="w-full h-full bg-gradient-to-r from-[#1A1A1A] via-[#24221D] to-[#8E6D16]/35 relative">
+        <div className="w-full h-full bg-gradient-to-r from-[#051F20] via-[#0B2B26] to-[#235347]/45 relative">
           {/* Decorative liquid wave curve SVG on right edge of left curtain */}
           <svg
-            className="absolute -right-20 top-0 bottom-0 h-full w-24 text-[#8E6D16]/40 fill-current"
+            className="absolute -right-20 top-0 bottom-0 h-full w-24 text-[#235347]/50 fill-current"
             viewBox="0 0 100 1000"
             preserveAspectRatio="none"
           >
@@ -77,7 +77,7 @@ export default function IntroSplash({ onComplete }) {
         </div>
       </motion.div>
 
-      {/* Right Gold Liquid Curtain Layer */}
+      {/* Right Liquid Curtain Layer */}
       <motion.div
         initial={{ x: "0%" }}
         animate={{ x: "105%" }}
@@ -88,10 +88,10 @@ export default function IntroSplash({ onComplete }) {
         }}
         className="absolute inset-y-0 right-0 w-[55%] z-20 pointer-events-none overflow-hidden"
       >
-        <div className="w-full h-full bg-gradient-to-l from-[#1A1A1A] via-[#24221D] to-[#C9A227]/30 relative">
+        <div className="w-full h-full bg-gradient-to-l from-[#051F20] via-[#0B2B26] to-[#8ED69D]/30 relative">
           {/* Decorative liquid wave curve SVG on left edge of right curtain */}
           <svg
-            className="absolute -left-20 top-0 bottom-0 h-full w-24 text-[#C9A227]/35 fill-current"
+            className="absolute -left-20 top-0 bottom-0 h-full w-24 text-[#8ED69D]/35 fill-current"
             viewBox="0 0 100 1000"
             preserveAspectRatio="none"
           >
@@ -100,12 +100,12 @@ export default function IntroSplash({ onComplete }) {
         </div>
       </motion.div>
 
-      {/* Ambient center gold glow pulse */}
+      {/* Ambient center mint glow pulse */}
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: [0.5, 1.25, 1.1], opacity: [0, 0.4, 0.3] }}
         transition={{ duration: 3.5, ease: "easeOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C9A227]/20 rounded-full blur-3xl pointer-events-none z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8ED69D]/15 rounded-full blur-3xl pointer-events-none z-10"
       />
 
       {/* ── 3, 4, 5: Center Badge + "NABEEL" Wordmark Composition ───────── */}
@@ -150,19 +150,19 @@ export default function IntroSplash({ onComplete }) {
             }}
             className="relative flex items-center justify-center"
           >
-            {/* Outer subtle rotating orbit ring with gold satellite */}
+            {/* Outer subtle rotating orbit ring with mint satellite */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-              className="absolute -inset-3.5 rounded-full border border-dashed border-[#C9A227]/30 pointer-events-none"
+              className="absolute -inset-3.5 rounded-full border border-dashed border-[#8ED69D]/30 pointer-events-none"
             >
-              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#C9A227] shadow-sm shadow-[#C9A227]" />
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#8ED69D] shadow-sm shadow-[#8ED69D]" />
             </motion.div>
 
             {/* Dark circular badge container */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#1A1A1A] border-2 border-[#C9A227] shadow-2xl shadow-[#C9A227]/25 flex items-center justify-center relative z-10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0B2B26] border-2 border-[#8ED69D] shadow-2xl shadow-[#8ED69D]/25 flex items-center justify-center relative z-10">
               {/* N Logo Mark - exact navbar gradient & typography */}
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#8E6D16] via-[#B08B1E] to-[#C9A227] flex items-center justify-center text-white font-mono text-xl sm:text-2xl font-bold shadow-md shadow-[#C9A227]/35">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#163832] via-[#235347] to-[#8ED69D] flex items-center justify-center text-[#DAF1DE] font-mono text-xl sm:text-2xl font-bold shadow-md shadow-[#8ED69D]/25">
                 N
               </div>
             </div>
@@ -180,10 +180,10 @@ export default function IntroSplash({ onComplete }) {
             className="overflow-hidden flex flex-col justify-center"
           >
             <div className="flex items-baseline space-x-2 whitespace-nowrap">
-              <span className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white uppercase">
+              <span className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#DAF1DE] uppercase">
                 NABEEL
               </span>
-              <span className="font-mono font-bold text-lg sm:text-2xl lg:text-3xl text-[#C9A227]">
+              <span className="font-mono font-bold text-lg sm:text-2xl lg:text-3xl text-[#8ED69D]">
                 .DEV
               </span>
             </div>
@@ -195,8 +195,8 @@ export default function IntroSplash({ onComplete }) {
               transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
               className="flex items-center space-x-2 mt-1 whitespace-nowrap"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-mono tracking-[0.22em] text-[#E8D5C4]/85 uppercase font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse" />
+              <span className="text-[11px] sm:text-xs font-mono tracking-[0.22em] text-[#DAF1DE]/80 uppercase font-semibold">
                 SYSTEM INITIALIZING // FULL STACK
               </span>
             </motion.div>
@@ -204,13 +204,13 @@ export default function IntroSplash({ onComplete }) {
         </motion.div>
       </div>
 
-      {/* Subtle bottom loading progress line (animates from 0% to 100% across 4 seconds) */}
+      {/* Subtle bottom loading progress line */}
       <div className="absolute bottom-0 inset-x-0 h-1 bg-white/5 pointer-events-none">
         <motion.div
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 4.0, ease: "easeInOut" }}
-          className="h-full bg-gradient-to-r from-[#8E6D16] via-[#C9A227] to-[#EEDD9F]"
+          className="h-full bg-gradient-to-r from-[#163832] via-[#235347] to-[#8ED69D]"
         />
       </div>
 
@@ -220,11 +220,11 @@ export default function IntroSplash({ onComplete }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.3 }}
         onClick={onComplete}
-        className="absolute top-5 right-5 sm:top-7 sm:right-8 z-50 text-[11px] font-mono tracking-wider text-[#E8D5C4]/70 hover:text-[#C9A227] px-3.5 py-1.5 rounded-full border border-white/10 hover:border-[#C9A227]/40 bg-black/40 backdrop-blur-md transition-all flex items-center space-x-1.5 cursor-pointer hover:bg-black/60"
+        className="absolute top-5 right-5 sm:top-7 sm:right-8 z-50 text-[11px] font-mono tracking-wider text-[#DAF1DE]/70 hover:text-[#8ED69D] px-3.5 py-1.5 rounded-full border border-[#235347] hover:border-[#8ED69D]/50 bg-[#0B2B26]/80 backdrop-blur-md transition-all flex items-center space-x-1.5 cursor-pointer"
         aria-label="Skip intro animation"
       >
         <span>SKIP INTRO</span>
-        <span className="text-[#C9A227]">→</span>
+        <span className="text-[#8ED69D]">→</span>
       </motion.button>
     </motion.div>
   );
