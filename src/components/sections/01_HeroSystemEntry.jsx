@@ -81,23 +81,23 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
        * ── LAYER 0: WebGL fluid background ────────────────────────────────────
        *   Absolutely positioned, full-bleed, z-0.
        *   pointer-events-none so it never blocks clicks on buttons/links.
-       *   Wrapped in opacity-[0.42] so it stays ambient / textural.
+       *   Wrapped in opacity-[0.45] so it stays ambient / textural.
        *   Only mounted when WebGL + motion are available.
        */}
       {showFluid ? (
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 pointer-events-none touch-none opacity-[0.42]"
+          className="absolute inset-0 z-0 pointer-events-none touch-none opacity-[0.45]"
         >
           <LiquidEther
-            colors={["#121212", "#533E10", "#2A2A2A"]}
+            colors={["#051F20", "#163832", "#235347", "#8ED69D"]}
             mouseForce={8}
             autoDemo={true}
             autoSpeed={0.3}
             autoIntensity={fluidProps.autoIntensity}
             resolution={fluidProps.resolution}
-            backgroundColor="#FAF6F0"
-            lightMode={true}
+            backgroundColor="#051F20"
+            lightMode={false}
             style={{ width: "100%", height: "100%" }}
           />
         </div>
@@ -108,7 +108,7 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 30% 40%, rgba(201,162,39,0.10) 0%, rgba(250,246,240,0) 70%), radial-gradient(ellipse 60% 50% at 80% 70%, rgba(216,190,166,0.13) 0%, rgba(250,246,240,0) 70%)",
+              "radial-gradient(ellipse 80% 60% at 30% 40%, rgba(142,214,157,0.12) 0%, rgba(5,31,32,0) 70%), radial-gradient(ellipse 60% 50% at 80% 70%, rgba(35,83,71,0.25) 0%, rgba(5,31,32,0) 70%)",
           }}
         />
       )}
@@ -116,21 +116,19 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
       {/* Blueprint grid (always present, sits just above fluid) */}
       <div className="absolute inset-0 z-[1] bg-os-grid pointer-events-none" />
 
-      {/* Ambient warm gold glow blobs */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C9A227]/10 rounded-full blur-3xl pointer-events-none z-[1]" />
-      <div className="absolute bottom-16 right-10 w-96 h-96 bg-[#E8D5C4]/35 rounded-full blur-3xl pointer-events-none z-[1]" />
+      {/* Ambient glow blobs */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8ED69D]/10 rounded-full blur-3xl pointer-events-none z-[1]" />
+      <div className="absolute bottom-16 right-10 w-96 h-96 bg-[#235347]/25 rounded-full blur-3xl pointer-events-none z-[1]" />
 
       {/*
        * ── LAYER 1: Heading-area text contrast scrim ───────────────────────────
-       *   A subtle gradient behind the LEFT text column so fluid colours never
-       *   kill legibility of the heading text, regardless of animation state.
        */}
       <div
         aria-hidden="true"
         className="absolute inset-y-0 left-0 z-[2] w-full lg:w-[62%] pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(250,246,240,0.72) 0%, rgba(250,246,240,0.45) 70%, transparent 100%)",
+            "linear-gradient(to right, rgba(5,31,32,0.85) 0%, rgba(5,31,32,0.55) 70%, transparent 100%)",
         }}
       />
 
@@ -152,20 +150,20 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
                 {/* 1. Uppercase Eyebrow Label */}
                 <motion.div
                   variants={itemVariants}
-                  className="mb-3 sm:mb-4 inline-flex items-center space-x-2 text-xs sm:text-sm font-mono font-bold tracking-[0.22em] uppercase text-[#8E6D16]"
+                  className="mb-3 sm:mb-4 inline-flex items-center space-x-2 text-xs sm:text-sm font-mono font-bold tracking-[0.22em] uppercase text-[#8ED69D]"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#C9A227] animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse" />
                   <span>ARCHITECTING CLEAN FULL-STACK SYSTEMS</span>
                 </motion.div>
 
                 {/* 2. Massive Stacked Display Heading */}
-                <h1 className="font-sans font-black tracking-tight text-[#1A1A1A] leading-[0.92] text-[clamp(2.75rem,7vw,6.25rem)] uppercase mb-5 sm:mb-6">
+                <h1 className="font-sans font-black tracking-tight text-[#DAF1DE] leading-[0.92] text-[clamp(2.75rem,7vw,6.25rem)] uppercase mb-5 sm:mb-6">
                   <motion.span variants={itemVariants} className="block">
                     FULL STACK
                   </motion.span>
                   <motion.span
                     variants={itemVariants}
-                    className="block text-transparent bg-clip-text bg-gradient-to-r from-[#1A1A1A] via-[#8E6D16] to-[#C9A227]"
+                    className="block text-transparent bg-clip-text bg-gradient-to-r from-[#DAF1DE] via-[#A8E3B4] to-[#8ED69D]"
                   >
                     DEVELOPER
                   </motion.span>
@@ -174,10 +172,10 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
                 {/* 3. Subtext */}
                 <motion.p
                   variants={itemVariants}
-                  className="text-base sm:text-lg text-[#5C5855] max-w-xl leading-relaxed mb-8"
+                  className="text-base sm:text-lg text-[#DAF1DE]/80 max-w-xl leading-relaxed mb-8"
                 >
                   I'm{" "}
-                  <strong className="text-[#1A1A1A] font-semibold">
+                  <strong className="text-[#DAF1DE] font-semibold">
                     {profileData.name}
                   </strong>
                   , a Full Stack Developer &amp; 7th Semester CS student at
@@ -193,19 +191,19 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
                   {/* Primary */}
                   <button
                     onClick={onExploreClick}
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#C9A227] hover:bg-[#B08B1E] text-[#1A1A1A] font-bold text-sm shadow-md shadow-[#C9A227]/25 transition-all duration-200 flex items-center justify-center space-x-2 group hover:translate-y-[-1px] cursor-pointer"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#8ED69D] hover:bg-[#7bc78b] text-[#051F20] font-bold text-sm shadow-md shadow-[#8ED69D]/20 transition-all duration-200 flex items-center justify-center space-x-2 group hover:translate-y-[-1px] cursor-pointer"
                   >
                     <span>Explore Real Case Files</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#1A1A1A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#051F20] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
 
                   {/* Secondary */}
                   <button
                     onClick={onContactClick}
-                    className="w-full sm:w-auto px-2 py-3.5 text-[#1A1A1A] hover:text-[#8E6D16] font-semibold text-sm transition-colors duration-200 flex items-center justify-center space-x-2 group underline-offset-4 hover:underline cursor-pointer"
+                    className="w-full sm:w-auto px-2 py-3.5 text-[#DAF1DE] hover:text-[#8ED69D] font-semibold text-sm transition-colors duration-200 flex items-center justify-center space-x-2 group underline-offset-4 hover:underline cursor-pointer"
                   >
                     <span>Initialize Contact</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#8E6D16] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#8ED69D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
                 </motion.div>
               </div>
@@ -225,38 +223,38 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
                         <svg viewBox="0 0 140 140" className="w-full h-full fill-none">
                           <circle
                             cx="140" cy="0" r="115"
-                            stroke="#C9A227" strokeOpacity="0.25"
+                            stroke="#8ED69D" strokeOpacity="0.25"
                             strokeWidth="1" strokeDasharray="4 3"
                           />
                           <circle
                             cx="140" cy="0" r="90"
-                            stroke="#C9A227" strokeOpacity="0.5"
+                            stroke="#8ED69D" strokeOpacity="0.5"
                             strokeWidth="1.2"
                           />
-                          <circle cx="68" cy="58" r="2.5" fill="#C9A227" fillOpacity="0.75" />
+                          <circle cx="68" cy="58" r="2.5" fill="#8ED69D" fillOpacity="0.75" />
                         </svg>
                       </div>
 
                       {/* Badge */}
-                      <div className="relative inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#1A1A1A]/85 backdrop-blur-md border border-[#C9A227]/40 shadow-lg shadow-[#1A1A1A]/20">
-                        <Sparkles className="w-3.5 h-3.5 text-[#C9A227] animate-pulse" />
-                        <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-[#EEDD9F] uppercase">
+                      <div className="relative inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0B2B26]/90 backdrop-blur-md border border-[#8ED69D]/50 shadow-lg shadow-[#051F20]/40">
+                        <Sparkles className="w-3.5 h-3.5 text-[#8ED69D] animate-pulse" />
+                        <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-[#DAF1DE] uppercase">
                           AVAILABLE FOR PROJECTS
                         </span>
                       </div>
                     </div>
 
                     {/* Photo container */}
-                    <div className="w-full h-full rounded-2xl lg:rounded-none overflow-hidden border border-[#E8D5C4] lg:border-none shadow-lg lg:shadow-none bg-[#F4ECE1] relative">
+                    <div className="w-full h-full rounded-2xl lg:rounded-none overflow-hidden border border-[#235347] lg:border-none shadow-lg lg:shadow-none bg-[#0B2B26] relative">
                       <img
                         src={profileData.profileImage}
                         alt="Nabeel Mughal — Full Stack Developer"
                         className="w-full h-full object-cover object-top lg:object-[center_18%]"
                       />
                       {/* Left blend on desktop */}
-                      <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#FAF6F0] to-transparent pointer-events-none" />
+                      <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#051F20] to-transparent pointer-events-none" />
                       {/* Bottom blend */}
-                      <div className="hidden lg:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FAF6F0]/80 to-transparent pointer-events-none" />
+                      <div className="hidden lg:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#051F20]/90 to-transparent pointer-events-none" />
                     </div>
                   </div>
                 </motion.div>
@@ -271,27 +269,27 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
           variants={itemVariants}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10 sm:mt-14 relative z-10"
         >
-          <div className="bg-[#1A1A1A] border border-[#332B18] rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-[#0B2B26] border border-[#163832] rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, idx) => {
                 const Icon = stat.icon;
                 const borderClasses = [
-                  "border-r border-b lg:border-b-0 border-[#332B18]",
-                  "border-b lg:border-b-0 lg:border-r border-[#332B18]",
-                  "border-r lg:border-r border-[#332B18]",
+                  "border-r border-b lg:border-b-0 border-[#163832]",
+                  "border-b lg:border-b-0 lg:border-r border-[#163832]",
+                  "border-r lg:border-r border-[#163832]",
                   "",
                 ][idx];
 
                 return (
                   <div
                     key={stat.id}
-                    className={`flex flex-col items-center justify-center p-5 sm:p-7 text-center group hover:bg-[#222222] transition-colors duration-200 ${borderClasses}`}
+                    className={`flex flex-col items-center justify-center p-5 sm:p-7 text-center group hover:bg-[#163832] transition-colors duration-200 ${borderClasses}`}
                   >
-                    <Icon className="w-5 h-5 text-[#C9A227] mb-2 sm:mb-2.5 transition-transform duration-200 group-hover:scale-110" />
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-white group-hover:text-[#EEDD9F] tracking-tight font-sans transition-colors duration-200">
+                    <Icon className="w-5 h-5 text-[#8ED69D] mb-2 sm:mb-2.5 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#DAF1DE] group-hover:text-[#8ED69D] tracking-tight font-sans transition-colors duration-200">
                       {stat.number}
                     </span>
-                    <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-[#C9A227] uppercase mt-1 sm:mt-2">
+                    <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-[#8ED69D] uppercase mt-1 sm:mt-2">
                       {stat.label}
                     </span>
                   </div>

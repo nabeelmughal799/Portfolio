@@ -7,7 +7,7 @@ export const profileData = {
   email: "nabeelmughal295997@gmail.com",
   phone: "0323-0840018",
   github: "https://github.com/nabeelmughal799",
-  profileImage: "/images/me.jpeg",
+  profileImage: "/images/me.png",
   availabilityStatus: "Open for Full-Stack & Frontend Opportunities",
   summary: "Computer Science student at University of the Punjab (7th Semester) bridging theoretical computer science (C++, OOP, Data Structures & Algorithms) with production full-stack web engineering. Experienced in building responsive, accessible frontends with React and robust RESTful backends with Node.js, Express, and MongoDB/SQL. Certified internationally via Credly (Pearson VUE / Certiport).",
   education: [

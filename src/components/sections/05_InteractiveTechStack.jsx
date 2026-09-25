@@ -11,7 +11,7 @@ export default function InteractiveTechStack({ onHighlightProject }) {
   const linkedProjects = projectsData.filter(p => currentSkill.projectIds.includes(p.id));
 
   return (
-    <section id="tech-stack" className="py-24 bg-[#FAF6F0] border-b border-[#E8D5C4]">
+    <section id="tech-stack" className="py-24 bg-[#051F20] border-b border-[#163832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -22,14 +22,14 @@ export default function InteractiveTechStack({ onHighlightProject }) {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-14"
         >
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#8E6D16] bg-[#F7F0D4] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#EEDD9F]">
-            <Code2 className="w-3.5 h-3.5 text-[#C9A227]" />
+          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#8ED69D] bg-[#163832] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#235347]">
+            <Code2 className="w-3.5 h-3.5 text-[#8ED69D]" />
             <span>Interactive Technology Matrix</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#DAF1DE] tracking-tight">
             Click Any Technology to Reveal Verified Evidence
           </h2>
-          <p className="mt-3 text-base text-[#5C5855]">
+          <p className="mt-3 text-base text-[#DAF1DE]/80">
             Skills are not arbitrary self-graded percentage bars. In this operating system, selecting any tool displays the exact production deployments where it was engineered.
           </p>
         </motion.div>
@@ -43,11 +43,11 @@ export default function InteractiveTechStack({ onHighlightProject }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-[#E8D5C4] shadow-sm"
+            className="lg:col-span-6 bg-[#0B2B26] p-6 sm:p-8 rounded-2xl border border-[#163832] shadow-sm"
           >
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E8D5C4] text-xs font-mono text-[#6E6963]">
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#163832] text-xs font-mono text-[#DAF1DE]/70">
               <span>SELECT TECHNOLOGY</span>
-              <span className="text-[#8E6D16] font-semibold">{skillsData.length} VERIFIED TOOLS</span>
+              <span className="text-[#8ED69D] font-semibold">{skillsData.length} VERIFIED TOOLS</span>
             </div>
 
             <div className="flex flex-wrap gap-2.5">
@@ -64,16 +64,16 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                         onHighlightProject(skill.projectIds[0]);
                       }
                     }}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 flex items-center space-x-1.5 border ${
+                    className={`px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 flex items-center space-x-1.5 border cursor-pointer ${
                       isSelected
-                        ? "bg-[#C9A227] text-white border-[#C9A227] shadow-md shadow-[#C9A227]/25 scale-[1.03]"
-                        : "bg-[#FAF6F0] hover:bg-[#F4ECE1] text-[#1A1A1A] border-[#E8D5C4] hover:border-[#C9A227]"
+                        ? "bg-[#8ED69D] text-[#051F20] font-bold border-[#8ED69D] shadow-md shadow-[#8ED69D]/25 scale-[1.03]"
+                        : "bg-[#051F20] hover:bg-[#163832] text-[#DAF1DE] border-[#163832] hover:border-[#235347]"
                     }`}
                   >
                     <span>{skill.name}</span>
                     {hasProjects && (
                       <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
-                        isSelected ? "bg-[#8E6D16] text-white" : "bg-[#F7F0D4] text-[#8E6D16]"
+                        isSelected ? "bg-[#051F20] text-[#8ED69D]" : "bg-[#163832] text-[#8ED69D]"
                       }`}>
                         {skill.projectIds.length}
                       </span>
@@ -83,9 +83,9 @@ export default function InteractiveTechStack({ onHighlightProject }) {
               })}
             </div>
 
-            <div className="mt-8 pt-4 border-t border-[#E8D5C4] text-xs text-[#6E6963] font-mono flex items-center justify-between">
+            <div className="mt-8 pt-4 border-t border-[#163832] text-xs text-[#DAF1DE]/60 font-mono flex items-center justify-between">
               <span>• Numbers indicate confirmed deployed projects</span>
-              <span className="text-[#8E6D16] font-semibold">Zero fabricated skills</span>
+              <span className="text-[#8ED69D] font-semibold">Zero fabricated skills</span>
             </div>
           </motion.div>
 
@@ -98,16 +98,16 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl border-2 border-[#C9A227]/50 p-6 sm:p-8 shadow-xl shadow-[#1A1A1A]/5 relative"
+                className="bg-[#0B2B26] rounded-2xl border-2 border-[#235347] p-6 sm:p-8 shadow-xl shadow-[#051F20]/50 relative"
               >
                 
                 {/* Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#E8D5C4]">
+                <div className="flex items-center justify-between pb-4 border-b border-[#163832]">
                   <div>
-                    <span className="text-xs font-mono text-[#8E6D16] font-semibold uppercase tracking-wider">
+                    <span className="text-xs font-mono text-[#8ED69D] font-semibold uppercase tracking-wider">
                       {currentSkill.category} // {currentSkill.level}
                     </span>
-                    <h3 className="text-2xl font-extrabold text-[#1A1A1A] mt-1">
+                    <h3 className="text-2xl font-extrabold text-[#DAF1DE] mt-1">
                       {currentSkill.name}
                     </h3>
                   </div>
@@ -116,7 +116,7 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                     href={currentSkill.docsUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-[#F7F0D4] hover:bg-[#EEDD9F] text-[#8E6D16] border border-[#E8D5C4] text-xs font-mono transition-colors"
+                    className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-[#163832] hover:bg-[#235347] text-[#8ED69D] border border-[#235347] text-xs font-mono transition-colors"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Official Docs</span>
@@ -125,13 +125,13 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-[#5C5855] my-4 leading-relaxed">
+                <p className="text-sm text-[#DAF1DE]/80 my-4 leading-relaxed">
                   {currentSkill.description}
                 </p>
 
                 {/* Linked Projects Connection */}
-                <div className="mt-6 pt-4 border-t border-[#E8D5C4]">
-                  <span className="text-xs font-mono text-[#6E6963] uppercase tracking-wider block mb-3 font-semibold">
+                <div className="mt-6 pt-4 border-t border-[#163832]">
+                  <span className="text-xs font-mono text-[#DAF1DE]/70 uppercase tracking-wider block mb-3 font-semibold">
                     Used in {linkedProjects.length > 0 ? `${linkedProjects.length} Verified Projects:` : "Foundational Academics / Coursework:"}
                   </span>
 
@@ -140,13 +140,13 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                       {linkedProjects.map((project) => (
                         <div
                           key={project.id}
-                          className="p-3.5 rounded-xl bg-[#FAF6F0] border border-[#E8D5C4] flex items-center justify-between hover:bg-[#F4ECE1] transition-colors"
+                          className="p-3.5 rounded-xl bg-[#051F20] border border-[#163832] flex items-center justify-between hover:bg-[#163832]/60 transition-colors"
                         >
                           <div className="min-w-0 pr-3">
-                            <h4 className="text-sm font-bold text-[#1A1A1A] truncate">
+                            <h4 className="text-sm font-bold text-[#DAF1DE] truncate">
                               {project.title}
                             </h4>
-                            <p className="text-xs text-[#6E6963] truncate">
+                            <p className="text-xs text-[#DAF1DE]/60 truncate">
                               {project.tagline}
                             </p>
                           </div>
@@ -156,17 +156,17 @@ export default function InteractiveTechStack({ onHighlightProject }) {
                               href={project.liveUrl}
                               target="_blank"
                               rel="noreferrer"
-                              className="px-2.5 py-1 rounded bg-[#C9A227] text-white text-xs font-mono font-medium hover:bg-[#B08B1E] transition-colors flex items-center space-x-1"
+                              className="px-2.5 py-1 rounded bg-[#8ED69D] text-[#051F20] text-xs font-mono font-bold hover:bg-[#7bc78b] transition-colors flex items-center space-x-1"
                             >
                               <span>Live</span>
-                              <ArrowRight className="w-3 h-3" />
+                              <ArrowRight className="w-3 h-3 text-[#051F20]" />
                             </a>
                           </div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="p-4 rounded-xl bg-[#FAF6F0] border border-[#E8D5C4] text-xs text-[#5C5855] font-mono">
+                    <div className="p-4 rounded-xl bg-[#051F20] border border-[#163832] text-xs text-[#DAF1DE]/70 font-mono">
                       Deep academic & theoretical grounding developed through University of the Punjab Computer Science coursework and data structure laboratories.
                     </div>
                   )}

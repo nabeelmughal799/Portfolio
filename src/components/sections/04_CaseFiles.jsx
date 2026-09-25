@@ -23,7 +23,7 @@ export default function CaseFiles({ selectedProjectId }) {
   };
 
   return (
-    <section id="projects" className="py-24 bg-white border-b border-[#E8D5C4]">
+    <section id="projects" className="py-24 bg-[#0B2B26] border-b border-[#163832]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -35,20 +35,20 @@ export default function CaseFiles({ selectedProjectId }) {
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4"
         >
           <div className="max-w-2xl">
-            <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#8E6D16] bg-[#F7F0D4] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#EEDD9F]">
-              <FolderGit2 className="w-3.5 h-3.5 text-[#C9A227]" />
+            <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#8ED69D] bg-[#163832] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#235347]">
+              <FolderGit2 className="w-3.5 h-3.5 text-[#8ED69D]" />
               <span>Evidence Repository</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#DAF1DE] tracking-tight">
               Verified Case Files & Production Deployments
             </h2>
-            <p className="mt-3 text-base text-[#5C5855]">
+            <p className="mt-3 text-base text-[#DAF1DE]/80">
               Each system is documented under an authentic engineering audit: Problem &rarr; Architectural Approach &rarr; Tech Stack &rarr; Confirmed Result &rarr; What I’d Improve.
             </p>
           </div>
 
-          <div className="flex items-center space-x-2 text-xs font-mono text-[#8E6D16] bg-[#F4ECE1] px-3 py-1.5 rounded-lg border border-[#E8D5C4]">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <div className="flex items-center space-x-2 text-xs font-mono text-[#8ED69D] bg-[#163832] px-3 py-1.5 rounded-lg border border-[#235347]">
+            <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse"></span>
             <span>ALL 4 LIVE IN PRODUCTION</span>
           </div>
         </motion.div>
@@ -69,31 +69,31 @@ export default function CaseFiles({ selectedProjectId }) {
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 className={`transition-all duration-300 rounded-2xl border ${
                   isHighlighted
-                    ? "ring-4 ring-[#C9A227]/25 border-[#C9A227] bg-[#F7F0D4]/30"
-                    : "border-[#E8D5C4] bg-white hover:border-[#C9A227]/60"
-                } shadow-md shadow-[#1A1A1A]/5 overflow-hidden`}
+                    ? "ring-4 ring-[#8ED69D]/25 border-[#8ED69D] bg-[#051F20]"
+                    : "border-[#163832] bg-[#051F20] hover:border-[#235347]"
+                } shadow-md shadow-[#051F20]/50 overflow-hidden`}
               >
                 {/* Case File Header Strip */}
-                <div className="p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-[#E8D5C4]">
+                <div className="p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-[#163832]">
                   <div className="space-y-2 max-w-3xl">
                     <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                      <span className="px-2.5 py-0.5 rounded bg-[#C9A227] text-white font-semibold">
+                      <span className="px-2.5 py-0.5 rounded bg-[#8ED69D] text-[#051F20] font-bold">
                         CASE #{idx + 1}
                       </span>
-                      <span className="px-2.5 py-0.5 rounded bg-[#F4ECE1] text-[#8E6D16] border border-[#E8D5C4]">
+                      <span className="px-2.5 py-0.5 rounded bg-[#163832] text-[#8ED69D] border border-[#235347]">
                         {project.category}
                       </span>
-                      <span className="text-[#6E6963]">•</span>
-                      <span className="text-emerald-700 font-medium flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+                      <span className="text-[#235347]">•</span>
+                      <span className="text-[#8ED69D] font-medium flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#8ED69D] inline-block" />
                         {project.status}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#DAF1DE] tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-[#5C5855] text-sm sm:text-base font-medium">
+                    <p className="text-[#DAF1DE]/70 text-sm sm:text-base font-medium">
                       {project.tagline}
                     </p>
                   </div>
@@ -104,15 +104,15 @@ export default function CaseFiles({ selectedProjectId }) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-4 py-2.5 rounded-xl bg-[#C9A227] hover:bg-[#B08B1E] text-white text-xs font-semibold shadow-xs shadow-[#C9A227]/30 flex items-center space-x-1.5 transition-transform hover:scale-[1.02]"
+                      className="px-4 py-2.5 rounded-xl bg-[#8ED69D] hover:bg-[#7bc78b] text-[#051F20] text-xs font-bold shadow-xs shadow-[#8ED69D]/25 flex items-center space-x-1.5 transition-transform hover:scale-[1.02]"
                     >
                       <span>Live Production Link</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#051F20]" />
                     </a>
 
                     <button
                       onClick={() => toggleExpand(project.id)}
-                      className="px-4 py-2.5 rounded-xl bg-[#F4ECE1] hover:bg-[#EEDD9F] text-[#8E6D16] border border-[#E8D5C4] text-xs font-semibold flex items-center space-x-1.5 transition-colors"
+                      className="px-4 py-2.5 rounded-xl bg-[#163832] hover:bg-[#235347] text-[#8ED69D] border border-[#235347] text-xs font-semibold flex items-center space-x-1.5 transition-colors cursor-pointer"
                     >
                       <span>{isExpanded ? "Collapse Audit" : "Expand Case File"}</span>
                       {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -121,12 +121,12 @@ export default function CaseFiles({ selectedProjectId }) {
                 </div>
 
                 {/* Tech Chips Preview */}
-                <div className="px-6 sm:px-8 py-3 bg-[#FAF6F0] border-b border-[#E8D5C4] flex flex-wrap items-center gap-2 text-xs font-mono text-[#5C5855]">
-                  <span className="text-[#8E6D16] font-semibold mr-1">Stack:</span>
+                <div className="px-6 sm:px-8 py-3 bg-[#051F20]/90 border-b border-[#163832] flex flex-wrap items-center gap-2 text-xs font-mono text-[#DAF1DE]/70">
+                  <span className="text-[#8ED69D] font-semibold mr-1">Stack:</span>
                   {project.technologies.map(tech => (
                     <span 
                       key={tech} 
-                      className="px-2 py-0.5 rounded bg-white border border-[#E8D5C4] text-[#1A1A1A] text-[11px]"
+                      className="px-2 py-0.5 rounded bg-[#0B2B26] border border-[#163832] text-[#DAF1DE] text-[11px]"
                     >
                       {tech}
                     </span>
@@ -135,44 +135,44 @@ export default function CaseFiles({ selectedProjectId }) {
 
                 {/* Expandable Case File Deep Audit */}
                 {isExpanded && (
-                  <div className="p-6 sm:p-8 bg-white grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-[#E8D5C4]">
+                  <div className="p-6 sm:p-8 bg-[#051F20] grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-[#163832]">
                     
                     {/* Left Sub-column: Problem & Architecture */}
                     <div className="space-y-6 md:pr-6">
                       {/* Problem Statement */}
                       <div>
-                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8E6D16] tracking-wider mb-2">
-                          <AlertCircle className="w-4 h-4 text-[#C9A227]" />
+                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8ED69D] tracking-wider mb-2">
+                          <AlertCircle className="w-4 h-4 text-[#8ED69D]" />
                           <span>01. The Problem Solved</span>
                         </div>
-                        <p className="text-sm text-[#1A1A1A] leading-relaxed bg-[#FAF6F0] p-4 rounded-xl border border-[#E8D5C4]">
+                        <p className="text-sm text-[#DAF1DE] leading-relaxed bg-[#0B2B26] p-4 rounded-xl border border-[#163832]">
                           {project.problem}
                         </p>
                       </div>
 
                       {/* Technical Approach & Role */}
                       <div>
-                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8E6D16] tracking-wider mb-2">
-                          <Layers className="w-4 h-4 text-[#C9A227]" />
+                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8ED69D] tracking-wider mb-2">
+                          <Layers className="w-4 h-4 text-[#8ED69D]" />
                           <span>02. Approach & Architecture Decisions</span>
                         </div>
-                        <p className="text-sm text-[#1A1A1A] leading-relaxed">
+                        <p className="text-sm text-[#DAF1DE] leading-relaxed">
                           {project.approach}
                         </p>
-                        <div className="mt-3 text-xs font-mono text-[#6E6963]">
-                          <strong>Role:</strong> {project.role}
+                        <div className="mt-3 text-xs font-mono text-[#DAF1DE]/70">
+                          <strong className="text-[#DAF1DE]">Role:</strong> {project.role}
                         </div>
                       </div>
 
                       {/* Key Engineered Features */}
                       <div>
-                        <span className="text-xs font-mono font-bold uppercase text-[#6E6963] tracking-wider block mb-2">
+                        <span className="text-xs font-mono font-bold uppercase text-[#DAF1DE]/70 tracking-wider block mb-2">
                           Engineered Capabilities:
                         </span>
                         <ul className="space-y-2">
                           {project.features.map((feat, i) => (
-                            <li key={i} className="flex items-start space-x-2 text-xs text-[#1A1A1A]">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A227] flex-shrink-0 mt-0.5" />
+                            <li key={i} className="flex items-start space-x-2 text-xs text-[#DAF1DE]">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#8ED69D] flex-shrink-0 mt-0.5" />
                               <span>{feat}</span>
                             </li>
                           ))}
@@ -185,38 +185,38 @@ export default function CaseFiles({ selectedProjectId }) {
                       
                       {/* Confirmed Result */}
                       <div>
-                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-emerald-700 tracking-wider mb-2">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8ED69D] tracking-wider mb-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#8ED69D]" />
                           <span>03. Confirmed Result</span>
                         </div>
-                        <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-sm text-emerald-900 leading-relaxed font-medium">
+                        <div className="p-4 rounded-xl bg-[#0B2B26] border border-[#235347] text-sm text-[#DAF1DE] leading-relaxed font-medium">
                           {project.confirmedResult}
                         </div>
                       </div>
 
-                      {/* What I'd Improve (Required by Section 04) */}
+                      {/* What I'd Improve */}
                       <div>
-                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8E6D16] tracking-wider mb-2">
-                          <Sparkles className="w-4 h-4 text-[#C9A227]" />
+                        <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase text-[#8ED69D] tracking-wider mb-2">
+                          <Sparkles className="w-4 h-4 text-[#8ED69D]" />
                           <span>04. Next Sprint // What I'd Improve</span>
                         </div>
-                        <div className="p-4 rounded-xl bg-[#FAF6F0] border border-[#E8D5C4] text-sm text-[#1A1A1A] leading-relaxed">
+                        <div className="p-4 rounded-xl bg-[#0B2B26] border border-[#163832] text-sm text-[#DAF1DE] leading-relaxed">
                           {project.whatToImprove}
                         </div>
                       </div>
 
                       {/* External Verifications */}
                       <div className="pt-2">
-                        <span className="text-xs font-mono text-[#6E6963] uppercase tracking-wider block mb-2">
+                        <span className="text-xs font-mono text-[#DAF1DE]/70 uppercase tracking-wider block mb-2">
                           Live Environment:
                         </span>
-                        <div className="p-3 rounded-xl bg-[#1A1A1A] text-[#E8D5C4] font-mono text-xs flex items-center justify-between border border-[#332B18]">
+                        <div className="p-3 rounded-xl bg-[#0B2B26] text-[#DAF1DE]/80 font-mono text-xs flex items-center justify-between border border-[#163832]">
                           <span className="truncate pr-2">{project.liveUrl}</span>
                           <a
                             href={project.liveUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-[#C9A227] hover:text-white font-semibold underline flex items-center gap-1 flex-shrink-0"
+                            className="text-[#8ED69D] hover:text-[#DAF1DE] font-semibold underline flex items-center gap-1 flex-shrink-0"
                           >
                             <span>Visit</span>
                             <ExternalLink className="w-3 h-3" />

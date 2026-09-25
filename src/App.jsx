@@ -46,7 +46,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6F0] text-[#1A1A1A] flex flex-col font-sans selection:bg-[#C9A227] selection:text-white relative">
+    <div className="min-h-screen bg-[#051F20] text-[#DAF1DE] flex flex-col font-sans selection:bg-[#8ED69D] selection:text-[#051F20] relative">
       {/* One-Time Intro Splash Screen Overlay */}
       <AnimatePresence>
         {showSplash && <IntroSplash onComplete={handleSplashComplete} />}
