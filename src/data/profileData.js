@@ -1,5 +1,5 @@
 export const profileData = {
-  name: "Nabeel Nawaz",
+  name: "Nabeel Mughal",
   displayTag: "nabeel.dev",
   title: "Full Stack Web Developer",
   subTitle: "Computer Science Student & MERN Stack Engineer",

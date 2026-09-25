@@ -33,7 +33,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] text-[#1E293B] flex flex-col font-sans selection:bg-purple-600 selection:text-white relative">
+    <div className="min-h-screen bg-[#FAF6F0] text-[#1A1A1A] flex flex-col font-sans selection:bg-[#C9A227] selection:text-white relative">
       {/* Top OS Transforming Navbar */}
       <TransformingNavbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
 

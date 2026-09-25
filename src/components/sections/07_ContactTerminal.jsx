@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Terminal, Send, Check, Copy, Mail, Phone, ExternalLink, Sparkles } from "lucide-react";
 import { profileData } from "../../data/profileData";
 
@@ -42,39 +43,51 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section id="contact-terminal" className="py-24 bg-[#FAFAFC] border-b border-purple-100">
+    <section id="contact-terminal" className="py-24 bg-[#FAF6F0] border-b border-[#E8D5C4]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-purple-700 bg-purple-100/80 px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-            <Terminal className="w-3.5 h-3.5" />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mb-14"
+        >
+          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#8E6D16] bg-[#F7F0D4] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#EEDD9F]">
+            <Terminal className="w-3.5 h-3.5 text-[#C9A227]" />
             <span>Interactive Contact Terminal</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] tracking-tight">
             Start a Project // Initialize Inquiry
           </h2>
-          <p className="mt-3 text-base text-slate-600">
+          <p className="mt-3 text-base text-[#5C5855]">
             Send an inquiry directly into my developer inbox. I review project scopes, team engineering openings, and full-stack contracts promptly.
           </p>
-        </div>
+        </motion.div>
 
         {/* Terminal Window Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Form & Direct Contact (7 cols) */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-purple-200 shadow-xl shadow-purple-950/5">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-[#E8D5C4] shadow-xl shadow-[#1A1A1A]/5"
+          >
             {submitted ? (
               <div className="py-12 text-center space-y-4">
                 <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto shadow-xs">
                   <Check className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold text-[#1A1A1A]">
                   Inquiry Dispatched Successfully
                 </h3>
-                <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you, <strong className="text-slate-900">{formData.name}</strong>. Your project inquiry has been queued. You can also email me directly at{" "}
-                  <a href={`mailto:${profileData.email}`} className="text-purple-700 font-semibold underline">
+                <p className="text-sm text-[#5C5855] max-w-md mx-auto">
+                  Thank you, <strong className="text-[#1A1A1A]">{formData.name}</strong>. Your project inquiry has been queued. You can also email me directly at{" "}
+                  <a href={`mailto:${profileData.email}`} className="text-[#8E6D16] font-semibold underline">
                     {profileData.email}
                   </a>.
                 </p>
@@ -83,7 +96,7 @@ export default function ContactTerminal() {
                     setSubmitted(false);
                     setFormData({ name: "", email: "", projectType: "Full Stack Web Application", message: "" });
                   }}
-                  className="mt-4 px-5 py-2.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-800 text-xs font-mono font-semibold transition-colors"
+                  className="mt-4 px-5 py-2.5 rounded-xl bg-[#F4ECE1] hover:bg-[#EEDD9F] text-[#8E6D16] text-xs font-mono font-semibold transition-colors"
                 >
                   Send Another Inquiry
                 </button>
@@ -92,7 +105,7 @@ export default function ContactTerminal() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono font-semibold text-slate-700 uppercase mb-1.5">
+                    <label className="block text-xs font-mono font-semibold text-[#1A1A1A] uppercase mb-1.5">
                       Your Name *
                     </label>
                     <input
@@ -102,12 +115,12 @@ export default function ContactTerminal() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Alex Morgan"
-                      className="w-full px-4 py-3 rounded-xl border border-purple-200 bg-purple-50/20 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] bg-[#FAF6F0] text-[#1A1A1A] text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A227] focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-semibold text-slate-700 uppercase mb-1.5">
+                    <label className="block text-xs font-mono font-semibold text-[#1A1A1A] uppercase mb-1.5">
                       Your Email *
                     </label>
                     <input
@@ -117,20 +130,20 @@ export default function ContactTerminal() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="alex@company.com"
-                      className="w-full px-4 py-3 rounded-xl border border-purple-200 bg-purple-50/20 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] bg-[#FAF6F0] text-[#1A1A1A] text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A227] focus:border-transparent transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold text-slate-700 uppercase mb-1.5">
+                  <label className="block text-xs font-mono font-semibold text-[#1A1A1A] uppercase mb-1.5">
                     Project Type / Engagement Scope
                   </label>
                   <select
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-purple-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] bg-white text-[#1A1A1A] text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A227] focus:border-transparent transition-all"
                   >
                     <option value="Full Stack Web Application">Full Stack Web Application (MERN / React)</option>
                     <option value="Frontend Engineering / UI">Frontend Engineering / Responsive UI</option>
@@ -141,7 +154,7 @@ export default function ContactTerminal() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold text-slate-700 uppercase mb-1.5">
+                  <label className="block text-xs font-mono font-semibold text-[#1A1A1A] uppercase mb-1.5">
                     Project Requirements / Message *
                   </label>
                   <textarea
@@ -151,20 +164,20 @@ export default function ContactTerminal() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Briefly describe your objectives, timeline, or engineering role..."
-                    className="w-full px-4 py-3 rounded-xl border border-purple-200 bg-purple-50/20 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] bg-[#FAF6F0] text-[#1A1A1A] text-sm focus:outline-none focus:ring-2 focus:ring-[#C9A227] focus:border-transparent transition-all"
                   ></textarea>
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-semibold text-sm shadow-md shadow-purple-700/25 transition-all flex items-center justify-center space-x-2"
+                    className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#C9A227] hover:bg-[#B08B1E] text-white font-semibold text-sm shadow-md shadow-[#C9A227]/25 transition-all flex items-center justify-center space-x-2"
                   >
                     <Send className="w-4 h-4" />
                     <span>Transmit Project Inquiry</span>
                   </button>
 
-                  <span className="text-xs font-mono text-slate-500">
+                  <span className="text-xs font-mono text-[#6E6963]">
                     Instant dispatch to Nabeel
                   </span>
                 </div>
@@ -172,16 +185,16 @@ export default function ContactTerminal() {
             )}
 
             {/* Quick Contact Bar */}
-            <div className="mt-8 pt-6 border-t border-purple-100 flex flex-wrap items-center justify-between gap-4">
+            <div className="mt-8 pt-6 border-t border-[#E8D5C4] flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center space-x-2">
-                <span className="text-xs font-mono text-slate-500">DIRECT INBOX:</span>
-                <span className="text-xs font-mono font-bold text-slate-900">{profileData.email}</span>
+                <span className="text-xs font-mono text-[#6E6963]">DIRECT INBOX:</span>
+                <span className="text-xs font-mono font-bold text-[#1A1A1A]">{profileData.email}</span>
               </div>
 
               <div className="flex items-center space-x-2">
                 <button
                   onClick={copyEmail}
-                  className="px-3 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 text-xs font-mono flex items-center space-x-1.5 transition-colors"
+                  className="px-3 py-1.5 rounded-lg bg-[#F4ECE1] hover:bg-[#EEDD9F] text-[#8E6D16] border border-[#E8D5C4] text-xs font-mono flex items-center space-x-1.5 transition-colors"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copied ? "Copied to Clipboard" : "Copy Email"}</span>
@@ -189,71 +202,77 @@ export default function ContactTerminal() {
 
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="px-3 py-1.5 rounded-lg bg-purple-700 text-white text-xs font-mono flex items-center space-x-1 hover:bg-purple-800 transition-colors"
+                  className="px-3 py-1.5 rounded-lg bg-[#C9A227] text-white text-xs font-mono flex items-center space-x-1 hover:bg-[#B08B1E] transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   <span>Mailto</span>
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Live Terminal CLI Monitor (5 cols) */}
-          <div className="lg:col-span-5 bg-slate-950 border border-purple-950 rounded-2xl overflow-hidden shadow-2xl">
+          {/* Right Column: Live Terminal CLI Monitor (5 cols - Dark Element) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 bg-[#1A1A1A] border border-[#332B18] rounded-2xl overflow-hidden shadow-2xl shadow-[#1A1A1A]/30"
+          >
             {/* Terminal Top Bar */}
-            <div className="px-4 py-3 bg-slate-900 border-b border-purple-900/60 flex items-center justify-between">
+            <div className="px-4 py-3 bg-[#121212] border-b border-[#332B18] flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
               </div>
-              <span className="text-xs font-mono text-purple-300">
+              <span className="text-xs font-mono text-[#E8D5C4]">
                 bash -- nabeel.dev/cli
               </span>
               <div className="w-3 h-3" />
             </div>
 
             {/* Terminal Body */}
-            <div className="p-5 font-mono text-xs text-purple-200/90 space-y-2.5 min-h-[300px]">
-              <div className="text-slate-400">
+            <div className="p-5 font-mono text-xs text-[#E8D5C4] space-y-2.5 min-h-[300px]">
+              <div className="text-[#888888]">
                 # Developer Operating System CLI v2.4
               </div>
-              <div className="text-slate-400">
+              <div className="text-[#888888]">
                 # Location: Lahore, PK (UTC+5)
               </div>
               <div className="text-emerald-400">
                 $ sys.status --check
               </div>
-              <div className="text-purple-300 pl-2">
+              <div className="text-[#E8D5C4] pl-2">
                 ✓ Node.js & React Core: ONLINE<br />
                 ✓ Vercel Edge Serverless: HEALTHY<br />
                 ✓ Inbound Inquiry Port: 443 OPEN
               </div>
 
-              <div className="pt-2 text-slate-400">
+              <div className="pt-2 text-[#888888]">
                 # Active Session Logs:
               </div>
               {logs.map((log, index) => (
-                <div key={index} className="text-purple-300 text-[11px] leading-relaxed">
+                <div key={index} className="text-[#E8D5C4] text-[11px] leading-relaxed">
                   {log}
                 </div>
               ))}
 
-              <div className="pt-4 flex items-center space-x-2 text-purple-400">
+              <div className="pt-4 flex items-center space-x-2 text-[#C9A227]">
                 <span className="text-emerald-400">$</span>
-                <span className="w-2 h-4 bg-purple-400 animate-pulse inline-block"></span>
+                <span className="w-2 h-4 bg-[#C9A227] animate-pulse inline-block"></span>
               </div>
             </div>
 
             {/* Terminal Footer */}
-            <div className="p-3 bg-slate-900/90 border-t border-purple-900/60 text-[11px] font-mono text-purple-400 flex items-center justify-between">
+            <div className="p-3 bg-[#121212] border-t border-[#332B18] text-[11px] font-mono text-[#E8D5C4] flex items-center justify-between">
               <span>TEL: {profileData.phone}</span>
               <span className="text-emerald-400 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 LIVE
               </span>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
