@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import TransformingNavbar from "./components/layout/TransformingNavbar";
 import SystemStatusBar from "./components/layout/SystemStatusBar";
+import IntroSplash from "./components/layout/IntroSplash";
 import CommandPalette from "./components/os/CommandPalette";
 import HeroSystemEntry from "./components/sections/01_HeroSystemEntry";
 import LiveDashboard from "./components/sections/02_LiveDashboard";
@@ -13,6 +15,28 @@ import ContactTerminal from "./components/sections/07_ContactTerminal";
 export default function App() {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [highlightedProjectId, setHighlightedProjectId] = useState(null);
+
+  // One-time intro splash screen state (checked once per session & respects prefers-reduced-motion)
+  const [showSplash, setShowSplash] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return false;
+    try {
+      const alreadyPlayed = sessionStorage.getItem("nabeel_intro_played");
+      return !alreadyPlayed;
+    } catch {
+      return false;
+    }
+  });
+
+  const handleSplashComplete = () => {
+    try {
+      sessionStorage.setItem("nabeel_intro_played", "true");
+    } catch {
+      // Ignore storage errors in private browsing/sandboxed contexts
+    }
+    setShowSplash(false);
+  };
 
   const handleExploreClick = () => {
     const el = document.querySelector("#projects");
@@ -34,6 +58,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF6F0] text-[#1A1A1A] flex flex-col font-sans selection:bg-[#C9A227] selection:text-white relative">
+      {/* One-Time Intro Splash Screen Overlay */}
+      <AnimatePresence>
+        {showSplash && <IntroSplash onComplete={handleSplashComplete} />}
+      </AnimatePresence>
+
       {/* Top OS Transforming Navbar */}
       <TransformingNavbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
 
