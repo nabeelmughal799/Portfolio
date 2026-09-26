@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Sparkles, Layers, Cpu, ShieldCheck, Activity } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { profileData } from "../../data/profileData";
 import LiquidEther from "../ui/LiquidEther";
 
@@ -59,13 +59,7 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
         },
       };
 
-  // ── Stat bar data ───────────────────────────────────────────────────────────
-  const stats = [
-    { id: "deployments", icon: Layers,     number: "04",   label: "VERIFIED DEPLOYMENTS" },
-    { id: "tech",        icon: Cpu,         number: "11+",  label: "TECH VERIFIED"         },
-    { id: "credentials", icon: ShieldCheck, number: "02",   label: "CREDLY CREDENTIALS"    },
-    { id: "integrity",   icon: Activity,    number: "100%", label: "DATA INTEGRITY"        },
-  ];
+
 
   // ── LiquidEther props – mobile gets lower resolution/intensity for perf ─────
   const fluidProps = isMobile
@@ -244,38 +238,21 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
           </div>
         </div>
 
-        {/* 5. Full-width 4-stat bar */}
+
+        {/* ── Minimal tech-stack pill strip ───────────────────────────────── */}
         <motion.div
           variants={itemVariants}
-          className="w-full shrink-0 pt-2 sm:pt-3 relative z-10"
+          className="w-full shrink-0 pt-4 sm:pt-6 relative z-10"
         >
-          <div className="bg-[#0B2B26] border border-[#163832] rounded-2xl shadow-xl overflow-hidden">
-            <div className="grid grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat, idx) => {
-                const Icon = stat.icon;
-                const borderClasses = [
-                  "border-r border-b lg:border-b-0 border-[#163832]",
-                  "border-b lg:border-b-0 lg:border-r border-[#163832]",
-                  "border-r lg:border-r border-[#163832]",
-                  "",
-                ][idx];
-
-                return (
-                  <div
-                    key={stat.id}
-                    className={`flex flex-col items-center justify-center p-3.5 sm:p-4.5 lg:p-5 text-center group hover:bg-[#163832] transition-colors duration-200 ${borderClasses}`}
-                  >
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#8ED69D] mb-1.5 sm:mb-2 transition-transform duration-200 group-hover:scale-110" />
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#DAF1DE] group-hover:text-[#8ED69D] tracking-tight font-sans transition-colors duration-200">
-                      {stat.number}
-                    </span>
-                    <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-[#8ED69D] uppercase mt-1">
-                      {stat.label}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {["React", "Node.js", "MongoDB", "Express", "Tailwind", "Git", "REST APIs", "C++"].map((tag) => (
+              <span
+                key={tag}
+                className="px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold tracking-wider text-[#8ED69D] border border-[#235347] bg-[#0B2B26]/60 backdrop-blur-sm uppercase hover:border-[#8ED69D]/60 hover:text-[#DAF1DE] transition-colors duration-200"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </motion.div>
       </motion.div>
