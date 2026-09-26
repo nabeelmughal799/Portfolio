@@ -75,7 +75,7 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
   return (
     <section
       id="system-entry"
-      className="relative pt-24 sm:pt-28 pb-10 sm:pb-14 overflow-hidden"
+      className="relative h-screen h-[100dvh] min-h-[100vh] max-h-[100vh] pt-16 sm:pt-20 pb-4 sm:pb-6 overflow-hidden flex flex-col justify-between"
     >
       {/*
        * ── LAYER 0: WebGL fluid background ────────────────────────────────────
@@ -137,137 +137,117 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full relative z-10"
+        className="w-full flex-1 flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-0"
       >
-        {/* UPPER HERO: Left column + Right bleed photo */}
-        <div className="relative w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[480px] lg:min-h-[540px]">
+        {/* UPPER HERO: Left column + Right portrait */}
+        <div className="relative w-full flex-1 flex items-center min-h-0 py-2 sm:py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center w-full h-full min-h-0">
 
-              {/* LEFT: Eyebrow / Heading / Subtext / CTAs */}
-              <div className="lg:col-span-7 z-10 flex flex-col items-start pt-2 pb-4 sm:py-6">
+            {/* LEFT: Eyebrow / Heading / CTAs */}
+            <div className="lg:col-span-7 z-10 flex flex-col items-start justify-center">
 
-                {/* 1. Uppercase Eyebrow Label */}
-                <motion.div
+              {/* 1. Uppercase Eyebrow Label */}
+              <motion.div
+                variants={itemVariants}
+                className="mb-2 sm:mb-3 inline-flex items-center space-x-2 text-xs sm:text-sm font-mono font-bold tracking-[0.22em] uppercase text-[#8ED69D]"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse" />
+                <span>ARCHITECTING CLEAN FULL-STACK SYSTEMS</span>
+              </motion.div>
+
+              {/* 2. Massive Stacked Display Heading */}
+              <h1 className="font-sans font-black tracking-tight text-[#DAF1DE] leading-[0.92] text-[clamp(2.5rem,5.5vw,5.5rem)] uppercase mb-6 sm:mb-8">
+                <motion.span variants={itemVariants} className="block">
+                  FULL STACK
+                </motion.span>
+                <motion.span
                   variants={itemVariants}
-                  className="mb-3 sm:mb-4 inline-flex items-center space-x-2 text-xs sm:text-sm font-mono font-bold tracking-[0.22em] uppercase text-[#8ED69D]"
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-[#DAF1DE] via-[#A8E3B4] to-[#8ED69D]"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse" />
-                  <span>ARCHITECTING CLEAN FULL-STACK SYSTEMS</span>
-                </motion.div>
+                  DEVELOPER
+                </motion.span>
+              </h1>
 
-                {/* 2. Massive Stacked Display Heading */}
-                <h1 className="font-sans font-black tracking-tight text-[#DAF1DE] leading-[0.92] text-[clamp(2.75rem,7vw,6.25rem)] uppercase mb-5 sm:mb-6">
-                  <motion.span variants={itemVariants} className="block">
-                    FULL STACK
-                  </motion.span>
-                  <motion.span
-                    variants={itemVariants}
-                    className="block text-transparent bg-clip-text bg-gradient-to-r from-[#DAF1DE] via-[#A8E3B4] to-[#8ED69D]"
-                  >
-                    DEVELOPER
-                  </motion.span>
-                </h1>
-
-                {/* 3. Subtext */}
-                <motion.p
-                  variants={itemVariants}
-                  className="text-base sm:text-lg text-[#DAF1DE]/80 max-w-xl leading-relaxed mb-8"
+              {/* 3. CTA Buttons */}
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-wrap items-center gap-4 sm:gap-6 w-full sm:w-auto"
+              >
+                {/* Primary */}
+                <button
+                  onClick={onExploreClick}
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#8ED69D] hover:bg-[#7bc78b] text-[#051F20] font-bold text-sm shadow-md shadow-[#8ED69D]/20 transition-all duration-200 flex items-center justify-center space-x-2 group hover:translate-y-[-1px] cursor-pointer"
                 >
-                  I'm{" "}
-                  <strong className="text-[#DAF1DE] font-semibold">
-                    {profileData.name}
-                  </strong>
-                  , a Full Stack Developer &amp; 7th Semester CS student at
-                  University of the Punjab, engineering robust web systems with
-                  React, Node.js, and verifiable technical proof.
-                </motion.p>
+                  <span>Explore Real Case Files</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#051F20] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
 
-                {/* 4. CTA Buttons */}
-                <motion.div
-                  variants={itemVariants}
-                  className="flex flex-wrap items-center gap-4 sm:gap-6 w-full sm:w-auto"
+                {/* Secondary */}
+                <button
+                  onClick={onContactClick}
+                  className="w-full sm:w-auto px-2 py-3.5 text-[#DAF1DE] hover:text-[#8ED69D] font-semibold text-sm transition-colors duration-200 flex items-center justify-center space-x-2 group underline-offset-4 hover:underline cursor-pointer"
                 >
-                  {/* Primary */}
-                  <button
-                    onClick={onExploreClick}
-                    className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#8ED69D] hover:bg-[#7bc78b] text-[#051F20] font-bold text-sm shadow-md shadow-[#8ED69D]/20 transition-all duration-200 flex items-center justify-center space-x-2 group hover:translate-y-[-1px] cursor-pointer"
-                  >
-                    <span>Explore Real Case Files</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#051F20] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </button>
+                  <span>Initialize Contact</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#8ED69D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
+              </motion.div>
+            </div>
 
-                  {/* Secondary */}
-                  <button
-                    onClick={onContactClick}
-                    className="w-full sm:w-auto px-2 py-3.5 text-[#DAF1DE] hover:text-[#8ED69D] font-semibold text-sm transition-colors duration-200 flex items-center justify-center space-x-2 group underline-offset-4 hover:underline cursor-pointer"
-                  >
-                    <span>Initialize Contact</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#8ED69D] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </button>
-                </motion.div>
-              </div>
+            {/* 4. RIGHT: Portrait photo without background or card element */}
+            <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-end h-full min-h-[220px] sm:min-h-[280px] lg:min-h-0">
+              <motion.div
+                variants={itemVariants}
+                className="relative w-full max-w-sm sm:max-w-md lg:max-w-none h-full flex items-end justify-center lg:justify-end z-0 min-h-0"
+              >
+                <div className="relative w-full h-full max-h-[340px] sm:max-h-[400px] lg:max-h-[480px] flex items-end justify-center lg:justify-end">
 
-              {/* 5. RIGHT: Portrait photo (full-bleed desktop / contained mobile) */}
-              <div className="lg:col-span-5 relative lg:static">
-                <motion.div
-                  variants={itemVariants}
-                  className="relative w-full max-w-md mx-auto lg:max-w-none lg:mx-0 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[45vw] lg:max-w-[640px] xl:max-w-[720px] flex items-end justify-center lg:justify-end z-0"
-                >
-                  <div className="relative w-full h-[380px] sm:h-[460px] lg:h-full max-h-[580px] flex items-end">
-
-                    {/* 6. "AVAILABLE FOR PROJECTS" Badge + Circular Arc */}
-                    <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-6 lg:right-10 z-20">
-                      {/* Decorative thin circular arc line */}
-                      <div className="absolute -top-6 -right-6 w-32 h-32 sm:w-40 sm:h-40 pointer-events-none">
-                        <svg viewBox="0 0 140 140" className="w-full h-full fill-none">
-                          <circle
-                            cx="140" cy="0" r="115"
-                            stroke="#8ED69D" strokeOpacity="0.25"
-                            strokeWidth="1" strokeDasharray="4 3"
-                          />
-                          <circle
-                            cx="140" cy="0" r="90"
-                            stroke="#8ED69D" strokeOpacity="0.5"
-                            strokeWidth="1.2"
-                          />
-                          <circle cx="68" cy="58" r="2.5" fill="#8ED69D" fillOpacity="0.75" />
-                        </svg>
-                      </div>
-
-                      {/* Badge */}
-                      <div className="relative inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0B2B26]/90 backdrop-blur-md border border-[#8ED69D]/50 shadow-lg shadow-[#051F20]/40">
-                        <Sparkles className="w-3.5 h-3.5 text-[#8ED69D] animate-pulse" />
-                        <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-[#DAF1DE] uppercase">
-                          AVAILABLE FOR PROJECTS
-                        </span>
-                      </div>
+                  {/* "AVAILABLE FOR PROJECTS" Badge + Circular Arc */}
+                  <div className="absolute top-2 right-2 sm:top-4 sm:right-4 lg:top-4 lg:right-6 z-20">
+                    {/* Decorative thin circular arc line */}
+                    <div className="absolute -top-6 -right-6 w-32 h-32 sm:w-40 sm:h-40 pointer-events-none">
+                      <svg viewBox="0 0 140 140" className="w-full h-full fill-none">
+                        <circle
+                          cx="140" cy="0" r="115"
+                          stroke="#8ED69D" strokeOpacity="0.25"
+                          strokeWidth="1" strokeDasharray="4 3"
+                        />
+                        <circle
+                          cx="140" cy="0" r="90"
+                          stroke="#8ED69D" strokeOpacity="0.5"
+                          strokeWidth="1.2"
+                        />
+                        <circle cx="68" cy="58" r="2.5" fill="#8ED69D" fillOpacity="0.75" />
+                      </svg>
                     </div>
 
-                    {/* Photo container */}
-                    <div className="w-full h-full rounded-2xl lg:rounded-none overflow-hidden border border-[#235347] lg:border-none shadow-lg lg:shadow-none bg-[#0B2B26] relative">
-                      <img
-                        src={profileData.profileImage}
-                        alt="Nabeel Mughal — Full Stack Developer"
-                        className="w-full h-full object-cover object-top lg:object-[center_18%]"
-                      />
-                      {/* Left blend on desktop */}
-                      <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#051F20] to-transparent pointer-events-none" />
-                      {/* Bottom blend */}
-                      <div className="hidden lg:block absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#051F20]/90 to-transparent pointer-events-none" />
+                    {/* Badge */}
+                    <div className="relative inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0B2B26]/90 backdrop-blur-md border border-[#8ED69D]/50 shadow-lg shadow-[#051F20]/40">
+                      <Sparkles className="w-3.5 h-3.5 text-[#8ED69D] animate-pulse" />
+                      <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-[#DAF1DE] uppercase">
+                        AVAILABLE FOR PROJECTS
+                      </span>
                     </div>
                   </div>
-                </motion.div>
-              </div>
 
+                  {/* Transparent Photo Container - no card, no background, no borders */}
+                  <div className="w-full h-full flex items-end justify-center lg:justify-end relative">
+                    <img
+                      src={profileData.profileImage}
+                      alt="Nabeel Mughal — Full Stack Developer"
+                      className="h-full w-auto max-h-[320px] sm:max-h-[380px] lg:max-h-[460px] object-contain object-bottom pointer-events-none select-none"
+                    />
+                  </div>
+                </div>
+              </motion.div>
             </div>
+
           </div>
         </div>
 
-        {/* 7. Full-width 4-stat bar */}
+        {/* 5. Full-width 4-stat bar */}
         <motion.div
           variants={itemVariants}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10 sm:mt-14 relative z-10"
+          className="w-full shrink-0 pt-2 sm:pt-3 relative z-10"
         >
           <div className="bg-[#0B2B26] border border-[#163832] rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -283,13 +263,13 @@ export default function HeroSystemEntry({ onExploreClick, onContactClick }) {
                 return (
                   <div
                     key={stat.id}
-                    className={`flex flex-col items-center justify-center p-5 sm:p-7 text-center group hover:bg-[#163832] transition-colors duration-200 ${borderClasses}`}
+                    className={`flex flex-col items-center justify-center p-3.5 sm:p-4.5 lg:p-5 text-center group hover:bg-[#163832] transition-colors duration-200 ${borderClasses}`}
                   >
-                    <Icon className="w-5 h-5 text-[#8ED69D] mb-2 sm:mb-2.5 transition-transform duration-200 group-hover:scale-110" />
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#DAF1DE] group-hover:text-[#8ED69D] tracking-tight font-sans transition-colors duration-200">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#8ED69D] mb-1.5 sm:mb-2 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#DAF1DE] group-hover:text-[#8ED69D] tracking-tight font-sans transition-colors duration-200">
                       {stat.number}
                     </span>
-                    <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-[#8ED69D] uppercase mt-1 sm:mt-2">
+                    <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-wider text-[#8ED69D] uppercase mt-1">
                       {stat.label}
                     </span>
                   </div>
