@@ -25,6 +25,20 @@
   }
 }
 
+:is(
+  button,
+  [role="button"],
+  a[class*="rounded-xl"][class*="border"],
+  a[class*="rounded-2xl"][class*="border"],
+  div[class*="rounded-xl"][class*="border"],
+  div[class*="rounded-2xl"][class*="border"]
+):hover {
+  translate: 0 -2px;
+  outline: 1px solid rgba(115, 195, 138, 0.5);
+  outline-offset: 1px;
+  box-shadow: 0 8px 20px rgba(115, 195, 138, 0.18);
+}
+
 .telemetry-marquee {
   overflow: hidden;
 }
