@@ -25,6 +25,43 @@
   }
 }
 
+.telemetry-marquee {
+  overflow: hidden;
+}
+
+.telemetry-track {
+  display: flex;
+  width: max-content;
+}
+
+.telemetry-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.telemetry-marquee.is-active .telemetry-track {
+  animation: telemetry-scroll-left 24s linear infinite;
+}
+
+.telemetry-marquee:hover .telemetry-track,
+.telemetry-marquee:focus-within .telemetry-track {
+  animation-play-state: paused;
+}
+
+@keyframes telemetry-scroll-left {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telemetry-marquee.is-active .telemetry-track {
+    animation: none;
+  }
+}
+
 /* Developer OS Blueprint Grid Pattern */
 .bg-os-grid {
   background-size: 32px 32px;

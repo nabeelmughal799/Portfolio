@@ -1,9 +1,12 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Activity, ExternalLink, ShieldCheck, Briefcase, Layers } from "lucide-react";
 import { systemData } from "../../data/systemData";
 
 export default function LiveDashboard() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-40px" });
+
   const telemetryModules = [
     {
       id: "projects",
@@ -57,7 +60,7 @@ export default function LiveDashboard() {
   };
 
   return (
-    <section id="dashboard" className="py-12 bg-[#F2F5F6] border-y border-[#2D4A53]/20">
+    <section ref={sectionRef} id="dashboard" className="py-12 bg-[#F2F5F6] border-y border-[#2D4A53]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Dashboard Strip Header */}
@@ -92,51 +95,59 @@ export default function LiveDashboard() {
         </motion.div>
 
         {/* Dashboard Modules Grid (3 cards) */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6"
+          className={`telemetry-marquee mt-6 ${isInView ? "is-active" : ""}`}
         >
-          {telemetryModules.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <motion.a
-                key={item.id}
-                variants={cardVariants}
-                href={item.href}
-                className="group relative bg-[#FFFFFF] p-5 rounded-xl border border-[#2D4A53]/15 hover:border-[#73C38A] transition-[border-color,color] duration-200 flex flex-col justify-between"
+          <div className="telemetry-track">
+            {[false, true].map((isClone) => (
+              <div
+                key={isClone ? "telemetry-clone" : "telemetry-cards"}
+                className="telemetry-group"
+                aria-hidden={isClone}
               >
-                <div>
-                  {/* Status header */}
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="p-2 rounded-lg bg-[#F2F5F6] border border-[#2D4A53]/20 text-[#73C38A] group-hover:scale-105 transition-transform">
-                      <Icon className="w-4 h-4" />
-                    </span>
-                    <span 
-                      className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full border bg-[#F2F5F6] text-[#2D4A53] border-[#2D4A53]/20"
+                {telemetryModules.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <motion.a
+                      key={`${item.id}-${isClone ? "clone" : "card"}`}
+                      variants={cardVariants}
+                      href={item.href}
+                      tabIndex={isClone ? -1 : undefined}
+                      className="group relative w-[min(85vw,24rem)] shrink-0 bg-[#FFFFFF] p-5 rounded-xl border border-[#2D4A53]/15 hover:border-[#73C38A] transition-[border-color,color] duration-200 flex flex-col justify-between font-sans"
                     >
-                      {item.status}
-                    </span>
-                  </div>
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="p-2 rounded-lg bg-[#F2F5F6] border border-[#2D4A53]/20 text-[#73C38A] group-hover:scale-105 transition-transform">
+                            <Icon className="w-4 h-4" />
+                          </span>
+                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border bg-[#F2F5F6] text-[#2D4A53] border-[#2D4A53]/20">
+                            {item.status}
+                          </span>
+                        </div>
 
-                  <p className="text-xs font-mono text-[#69818D] uppercase tracking-wide">
-                    {item.title}
-                  </p>
-                  <p className="text-2xl font-extrabold text-[#0D1F23] mt-1 tracking-tight group-hover:text-[#73C38A] transition-colors">
-                    {item.metric}
-                  </p>
-                </div>
+                        <p className="text-xs text-[#69818D] uppercase tracking-wide">
+                          {item.title}
+                        </p>
+                        <p className="text-2xl font-extrabold text-[#0D1F23] mt-1 tracking-tight group-hover:text-[#73C38A] transition-colors">
+                          {item.metric}
+                        </p>
+                      </div>
 
-                <div className="mt-4 pt-3 border-t border-[#2D4A53]/15 flex items-center justify-between text-xs text-[#2D4A53]">
-                  <span className="truncate pr-2">{item.detail}</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#73C38A] group-hover:text-[#0D1F23] group-hover:translate-x-0.5 transition-[color,transform] flex-shrink-0" />
-                </div>
-              </motion.a>
-            );
-          })}
+                      <div className="mt-4 pt-3 border-t border-[#2D4A53]/15 flex items-center justify-between text-xs text-[#2D4A53]">
+                        <span className="truncate pr-2">{item.detail}</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-[#73C38A] group-hover:text-[#0D1F23] group-hover:translate-x-0.5 transition-[color,transform] flex-shrink-0" />
+                      </div>
+                    </motion.a>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
       </div>
