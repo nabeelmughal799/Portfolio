@@ -47,7 +47,7 @@ export default function IntroSplash({ onComplete }) {
       initial={{ opacity: 1 }}
       animate={{ opacity: phase === "outro" ? 0 : 1 }}
       transition={{ duration: 0.95, ease: [0.65, 0, 0.35, 1] }}
-      className="fixed inset-0 z-50 overflow-hidden bg-[#051F20] select-none pointer-events-auto"
+      className="fixed inset-0 z-50 overflow-hidden bg-[#0D1F23] select-none pointer-events-auto"
       style={{ touchAction: "none" }}
     >
       {/* Background blueprint grid overlay */}
@@ -65,10 +65,10 @@ export default function IntroSplash({ onComplete }) {
         }}
         className="absolute inset-y-0 left-0 w-[55%] z-20 pointer-events-none overflow-hidden"
       >
-        <div className="w-full h-full bg-gradient-to-r from-[#051F20] via-[#0B2B26] to-[#235347]/45 relative">
+        <div className="w-full h-full bg-gradient-to-r from-[#0D1F23] via-[#132E35] to-[#2D4A53]/45 relative">
           {/* Decorative liquid wave curve SVG on right edge of left curtain */}
           <svg
-            className="absolute -right-20 top-0 bottom-0 h-full w-24 text-[#235347]/50 fill-current"
+            className="absolute -right-20 top-0 bottom-0 h-full w-24 text-[#2D4A53]/50 fill-current"
             viewBox="0 0 100 1000"
             preserveAspectRatio="none"
           >
@@ -88,10 +88,10 @@ export default function IntroSplash({ onComplete }) {
         }}
         className="absolute inset-y-0 right-0 w-[55%] z-20 pointer-events-none overflow-hidden"
       >
-        <div className="w-full h-full bg-gradient-to-l from-[#051F20] via-[#0B2B26] to-[#8ED69D]/30 relative">
+        <div className="w-full h-full bg-gradient-to-l from-[#0D1F23] via-[#132E35] to-[#73C38A]/30 relative">
           {/* Decorative liquid wave curve SVG on left edge of right curtain */}
           <svg
-            className="absolute -left-20 top-0 bottom-0 h-full w-24 text-[#8ED69D]/35 fill-current"
+            className="absolute -left-20 top-0 bottom-0 h-full w-24 text-[#73C38A]/35 fill-current"
             viewBox="0 0 100 1000"
             preserveAspectRatio="none"
           >
@@ -105,7 +105,7 @@ export default function IntroSplash({ onComplete }) {
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: [0.5, 1.25, 1.1], opacity: [0, 0.4, 0.3] }}
         transition={{ duration: 3.5, ease: "easeOut" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8ED69D]/15 rounded-full blur-3xl pointer-events-none z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#73C38A]/15 rounded-full blur-3xl pointer-events-none z-10"
       />
 
       {/* ── 3, 4, 5: Center Badge + "NABEEL" Wordmark Composition ───────── */}
@@ -154,15 +154,15 @@ export default function IntroSplash({ onComplete }) {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-              className="absolute -inset-3.5 rounded-full border border-dashed border-[#8ED69D]/30 pointer-events-none"
+              className="absolute -inset-3.5 rounded-full border border-dashed border-[#73C38A]/30 pointer-events-none"
             >
-              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#8ED69D] shadow-sm shadow-[#8ED69D]" />
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#73C38A] shadow-sm shadow-[#73C38A]" />
             </motion.div>
 
             {/* Dark circular badge container */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0B2B26] border-2 border-[#8ED69D] shadow-2xl shadow-[#8ED69D]/25 flex items-center justify-center relative z-10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#132E35] border-2 border-[#73C38A] shadow-2xl shadow-[#73C38A]/25 flex items-center justify-center relative z-10">
               {/* N Logo Mark - exact navbar gradient & typography */}
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#163832] via-[#235347] to-[#8ED69D] flex items-center justify-center text-[#DAF1DE] font-mono text-xl sm:text-2xl font-bold shadow-md shadow-[#8ED69D]/25">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#132E35] via-[#2D4A53] to-[#73C38A] flex items-center justify-center text-[#0D1F23] font-mono text-xl sm:text-2xl font-bold shadow-md shadow-[#73C38A]/25">
                 N
               </div>
             </div>
@@ -180,10 +180,10 @@ export default function IntroSplash({ onComplete }) {
             className="overflow-hidden flex flex-col justify-center"
           >
             <div className="flex items-baseline space-x-2 whitespace-nowrap">
-              <span className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#DAF1DE] uppercase">
+              <span className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#AFB3B7] uppercase">
                 NABEEL
               </span>
-              <span className="font-mono font-bold text-lg sm:text-2xl lg:text-3xl text-[#8ED69D]">
+              <span className="font-mono font-bold text-lg sm:text-2xl lg:text-3xl text-[#73C38A]">
                 .DEV
               </span>
             </div>
@@ -195,8 +195,8 @@ export default function IntroSplash({ onComplete }) {
               transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
               className="flex items-center space-x-2 mt-1 whitespace-nowrap"
             >
-              <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-mono tracking-[0.22em] text-[#DAF1DE]/80 uppercase font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#73C38A] animate-pulse" />
+              <span className="text-[11px] sm:text-xs font-mono tracking-[0.22em] text-[#AFB3B7]/80 uppercase font-semibold">
                 SYSTEM INITIALIZING // FULL STACK
               </span>
             </motion.div>
@@ -210,7 +210,7 @@ export default function IntroSplash({ onComplete }) {
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 4.0, ease: "easeInOut" }}
-          className="h-full bg-gradient-to-r from-[#163832] via-[#235347] to-[#8ED69D]"
+          className="h-full bg-gradient-to-r from-[#132E35] via-[#2D4A53] to-[#73C38A]"
         />
       </div>
 
@@ -220,11 +220,11 @@ export default function IntroSplash({ onComplete }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.3 }}
         onClick={onComplete}
-        className="absolute top-5 right-5 sm:top-7 sm:right-8 z-50 text-[11px] font-mono tracking-wider text-[#DAF1DE]/70 hover:text-[#8ED69D] px-3.5 py-1.5 rounded-full border border-[#235347] hover:border-[#8ED69D]/50 bg-[#0B2B26]/80 backdrop-blur-md transition-all flex items-center space-x-1.5 cursor-pointer"
+        className="absolute top-5 right-5 sm:top-7 sm:right-8 z-50 text-[11px] font-mono tracking-wider text-[#AFB3B7]/70 hover:text-[#73C38A] px-3.5 py-1.5 rounded-full border border-[#2D4A53] hover:border-[#73C38A]/50 bg-[#132E35]/80 backdrop-blur-md transition-all flex items-center space-x-1.5 cursor-pointer"
         aria-label="Skip intro animation"
       >
         <span>SKIP INTRO</span>
-        <span className="text-[#8ED69D]">→</span>
+        <span className="text-[#73C38A]">→</span>
       </motion.button>
     </motion.div>
   );

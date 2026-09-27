@@ -57,7 +57,7 @@ export default function LiveDashboard() {
   };
 
   return (
-    <section id="dashboard" className="py-12 bg-[#0B2B26] border-y border-[#163832]">
+    <section id="dashboard" className="py-12 bg-[#F2F5F6] border-y border-[#2D4A53]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Dashboard Strip Header */}
@@ -66,27 +66,27 @@ export default function LiveDashboard() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#163832] gap-3"
+          className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#2D4A53]/20 gap-3"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-lg bg-[#163832] flex items-center justify-center text-[#8ED69D]">
+            <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] border border-[#2D4A53]/20 flex items-center justify-center text-[#73C38A] shadow-sm">
               <Activity className="w-4 h-4 animate-pulse" />
             </div>
             <div>
-              <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#DAF1DE] flex items-center gap-2">
+              <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#0D1F23] flex items-center gap-2">
                 Live System Telemetry
-                <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#163832] text-[#8ED69D] font-normal border border-[#235347]">
+                <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#EAEFEF] text-[#2D4A53] font-normal border border-[#2D4A53]/30">
                   REAL DATA ONLY
                 </span>
               </h2>
-              <p className="text-xs text-[#DAF1DE]/70 font-mono">
+              <p className="text-xs text-[#2D4A53] font-mono">
                 System state, verified credentials, and deployment health
               </p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-2 text-xs font-mono text-[#DAF1DE]/70">
-            <span className="w-2 h-2 rounded-full bg-[#8ED69D] animate-ping"></span>
+          <div className="flex items-center space-x-2 text-xs font-mono text-[#2D4A53]">
+            <span className="w-2 h-2 rounded-full bg-[#73C38A] animate-ping"></span>
             <span>DATA INTEGRITY: 100% VERIFIED</span>
           </div>
         </motion.div>
@@ -107,32 +107,32 @@ export default function LiveDashboard() {
                 key={item.id}
                 variants={cardVariants}
                 href={item.href}
-                className="group relative bg-[#051F20]/70 hover:bg-[#051F20] p-5 rounded-xl border border-[#163832] hover:border-[#8ED69D]/60 transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-[#051F20]/60 flex flex-col justify-between"
+                className="group relative bg-[#FFFFFF] p-5 rounded-xl border border-[#2D4A53]/15 hover:border-[#73C38A] transition-[border-color,color] duration-200 flex flex-col justify-between"
               >
                 <div>
                   {/* Status header */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="p-2 rounded-lg bg-[#163832] border border-[#235347] text-[#8ED69D] group-hover:scale-105 transition-transform">
+                    <span className="p-2 rounded-lg bg-[#F2F5F6] border border-[#2D4A53]/20 text-[#73C38A] group-hover:scale-105 transition-transform">
                       <Icon className="w-4 h-4" />
                     </span>
                     <span 
-                      className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full border bg-[#163832] text-[#8ED69D] border-[#235347]"
+                      className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full border bg-[#F2F5F6] text-[#2D4A53] border-[#2D4A53]/20"
                     >
                       {item.status}
                     </span>
                   </div>
 
-                  <p className="text-xs font-mono text-[#DAF1DE]/70 uppercase tracking-wide">
+                  <p className="text-xs font-mono text-[#69818D] uppercase tracking-wide">
                     {item.title}
                   </p>
-                  <p className="text-2xl font-extrabold text-[#DAF1DE] mt-1 tracking-tight group-hover:text-[#8ED69D] transition-colors">
+                  <p className="text-2xl font-extrabold text-[#0D1F23] mt-1 tracking-tight group-hover:text-[#73C38A] transition-colors">
                     {item.metric}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#163832] flex items-center justify-between text-xs text-[#DAF1DE]/70">
+                <div className="mt-4 pt-3 border-t border-[#2D4A53]/15 flex items-center justify-between text-xs text-[#2D4A53]">
                   <span className="truncate pr-2">{item.detail}</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#8ED69D] group-hover:text-[#DAF1DE] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#73C38A] group-hover:text-[#0D1F23] group-hover:translate-x-0.5 transition-[color,transform] flex-shrink-0" />
                 </div>
               </motion.a>
             );
