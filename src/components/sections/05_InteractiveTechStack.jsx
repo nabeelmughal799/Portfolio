@@ -22,10 +22,10 @@ export default function InteractiveTechStack({ onHighlightProject }) {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-14"
         >
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#2D4A53] bg-[#FFFFFF] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#2D4A53]/30 shadow-xs">
+          {/* <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#2D4A53] bg-[#FFFFFF] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#2D4A53]/30 shadow-xs">
             <Code2 className="w-3.5 h-3.5 text-[#73C38A]" />
             <span>Interactive Technology Matrix</span>
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D1F23] tracking-tight">
             Click Any Technology to Reveal Verified Evidence
           </h2>

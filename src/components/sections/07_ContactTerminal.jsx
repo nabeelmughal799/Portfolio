@@ -54,10 +54,10 @@ export default function ContactTerminal() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-14"
         >
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#73C38A] bg-[#132E35] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#2D4A53]">
+          {/* <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#73C38A] bg-[#132E35] px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#2D4A53]">
             <Terminal className="w-3.5 h-3.5 text-[#73C38A]" />
             <span>Interactive Contact Terminal</span>
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#AFB3B7] tracking-tight">
             Start a Project // Initialize Inquiry
           </h2>
