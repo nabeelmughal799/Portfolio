@@ -73,10 +73,10 @@ export default function WhatIBuild({ onSelectProject }) {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#73C38A] bg-[#2D4A53]/50 px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#5A636A]">
+          {/* <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-[#73C38A] bg-[#2D4A53]/50 px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-[#5A636A]">
             <Layers className="w-3.5 h-3.5 text-[#73C38A]" />
             <span>Engineering Capabilities</span>
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#AFB3B7] tracking-tight">
             What I Engineer for Real-World Demands
           </h2>
